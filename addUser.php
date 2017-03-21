@@ -23,18 +23,19 @@
 
 <div class="container">
     <div class="row">
-        <h1>Login Form!</h1>
-        <form action="postLogin.php" method="post">
+        <h1>Add User!</h1>
+        <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input name="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
+
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
