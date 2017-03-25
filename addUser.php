@@ -24,7 +24,11 @@
 <div class="container">
     <div class="row">
         <h1>Add User!</h1>
-        <form>
+        <form action="postAddUser.php" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Full Name</label>
+                <input name="fullname" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">

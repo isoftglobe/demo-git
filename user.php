@@ -20,7 +20,24 @@
 
 </head>
 <body>
+<?php
 
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = "my_db";
+//Init connect
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    echo "Lỗi kết nối" . $conn->connect_error;
+    die;
+} else {
+    echo "Kết nối thành công";
+}
+
+
+?>
 <div class="container">
     <div class="row">
         <h1>List User!</h1>
@@ -34,21 +51,25 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+            <?php
+            $sql = "SELECT * FROM student";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+            ?>
+                    <tr>
+                        <td>1</td>
+                        <td><?=$row["name"]?></td>
+                        <td>john@example.com</td>
+                    </tr>
+            <?php
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+
             </tbody>
         </table>
     </div>
